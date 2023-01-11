@@ -79,8 +79,6 @@ function encryptFile(file, password) {
 
       if (confirm("File successfully encrypted! Do you want to save the encrypted file?")) {
         saveAs(new Blob([encrypted], { type: file.type }), file.name + 'encrypted');
-        //a.attr('href', 'data:application/octet-stream,' + encrypted);
-				//a.attr('download', file.name + '.encrypted');
       }
       document.getElementById('en-file-input').value = '';
       document.getElementById('en-password-input').value = '';
@@ -142,12 +140,7 @@ function decryptFile(file, password) {
 
       console.log(decrypted);
       if (confirm("File successfully decrypted! Do you want to save the decrypted file?")) {
-       
-        
-        // Save the decrypted file to the same location as the original file
-        saveAs(new Blob([decrypted], { type: file.type }), file.name.replace('encrypted', ''));  
-        //a.attr('href', decrypted);
-				//a.attr('decrypted', file.name.replace('.encrypted',''));      
+        saveAs(new Blob([decrypted], { type: file.type }), file.name.replace('encrypted', ''));    
       }
       document.getElementById('de-file-input').value = '';
       document.getElementById('de-password-input').value = '';
