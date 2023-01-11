@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RC4</title>
+    <script src="https://kit.fontawesome.com/76d63a97f4.js" crossorigin="anonymous"></script>
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="content-head">
+                <h1><i class="fa fa-shield"></i> WEBBI***</h1>
+                <h4>Web browser based file encryption/decryption</h4>
+            </div>
+            <div class="content-body">
+                <span class="h1">What would you like to do?</span>
+                    <div class="div-option">
+
+                        <div class="div-ecncrypt">
+                            <a class="button encrypt" id="encryptButton"><i class="fa-light fa fa-key"></i> Encrypt a file</a>
+
+                            <div class="modal fade" id="encryptModal" role="dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <span class="closee" data-dismiss="encryptModal">&times;</span>
+                                            <h4 class="modal-title">Encrypt</h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div class="choose-file" id="stage-1">
+                                                <h1>Choose which file to encrypt</h1>
+                                                <h2>An encrypted copy of the file will be generated. No data is sent to our server.</h2>
+                                                
+                                                <div class="add-file">
+                                                    <input type="file" id="en-file-input">
+                                                </div>
+                                                <div class="input-key">
+                                                    <div class="content if-encrypt">
+                                                        <input type="password" id="en-password-input" placeholder="Input a key"/>
+                                                        <div class="tooltip"><i class="fa-sharp fa-solid fa-circle-question"></i>
+                                                            <span class="tooltiptext">Key will be used as an encryption key. Write it down or remember it; you won't be able to restore the file without it.</span>
+                                                        </div>
+                                                       <a class="button process-encrypt" id="process-encrypt">Encrypt!</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+            
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="div-decrypt">
+                            <a class="button decrypt enBut" id="decryptButton"><i class="fa-light fa fa-unlock"></i> Decrypt a file</a>
+
+                            <div class="modal fade" id="decryptModal" role="dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="closed" data-dismiss="modal">&times;</span>
+                                        <h4 class="modal-title">Decrypt</h4>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="choose-file" id="stage-1">
+                                            <h1>Choose which file to decrypt</h1>
+                                            <h2>Only files encrypted by this tool are accepted.</h2>
+                                            
+                                            <div class="add-file">
+                                                <input type="file" id="de-file-input"><br>
+                                            </div>
+                                        </div>
+                                        <div class="input-key">
+                                            <div class="content if-decrypt">
+                                                <input type="password" id="de-password-input" placeholder="Input a key"/>
+                                                <div class="tooltip"><i class="fa-sharp fa-solid fa-circle-question"></i>
+                                                    <span class="tooltiptext">Enter the key that was used to encrypt this file. It is not possible to decrypt it without it.</span>
+                                                </div>
+                                                <a class="button process-decrypt" id="process-decrypt">Decrypt!</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                             
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script src="assets/js/rc4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+<script src="assets/js/script.js"></script>
+</html>
